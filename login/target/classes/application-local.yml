@@ -1,0 +1,38 @@
+server:
+  port: 8080
+  context-path:
+
+spring:
+  application:
+    name: login
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ksm
+    username: postgres
+    password: 123
+    driver-class-name: org.postgresql.Driver
+  jpa:  
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# server:
+#   error:
+#     include-stacktrace: always
+#     include-message: always
+#     include-binding-errors: always
+  liquibase:
+   enabled: true
+   change-log: classpath:db/changelog/changelog-master.xml
+   drop-first: false
+   contexts: development
+   default-schema: public
+
+
+
+   
+
+
